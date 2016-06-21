@@ -13,3 +13,5 @@ A commit is a save point, and essentially creates a version of your repository. 
 
 * What is a merge conflict?
 A merge conflict is when there is code that does not align on the branches you are merging. This can be fixed by going into the branches and figuring out which code is the correct code to keep for the merge, or if new code needs to be written altogether.
+
+Amanda

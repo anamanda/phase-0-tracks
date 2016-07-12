@@ -1,0 +1,48 @@
+Elevator Algorithm
+
+-Pick a random number on the elevator panel
+  -If it is higher than your number, you need to count down
+    -Move left until you either
+      a) get to your number
+        -If you get to your number, press it
+      b) hit the beginning of the row
+        -If you reach the farthest left of your row, go to the row below that
+        -Start counting from the right of that row (go to parent step and repeat until you get option a))
+
+  -If the random number is lower than your number, you need to count up
+    -Move right until you either
+      a) get to your number
+        -If you get to your number, press it
+      b) hit the end of the row
+        -If you reach the farthest right of your row, go to the row above that
+        -Start counting from the left of that row (go to parent step and repeat until you get option a))
+
+
+Subway Algorithm
+
+-Walk down the stairs into the subway station
+-Walk through the turnstiles
+-If it is a station with an uptown/downtown or east/west option
+  -If uptown and downtown or east and west are in separate places
+    -Look at the signs above the platform to figure out which place to go for the train going in the correct direction, and go there
+      -If there are two sides to the platform with trains going in your direction
+        -Look at the signs to tell which side your train is coming on
+          a) If there are multiple trains that come to your side (which you can find on the signs above the platform)
+            -Wait until your train comes and then get on it
+          b) If your train is the only train coming on that side, get on the first train that comes
+      -If there is only one side to the platform
+        a) If there are multiple trains that come to your side (which you can find on the signs above the platform)
+          -Wait until your train comes and then get on it
+        b) If your train is the only train coming on that side, get on the first train that comes
+  -If uptown and downtown or east and west are in the same place (on the same platform), but on different sides
+    -Look at the signs to figure out which side your train is coming on
+      a) If there are multiple trains that come to your side (which you can find on the signs above the platform)
+         -Wait until your train comes and then get on it
+      b) If your train is the only train coming on that side, get on the first train that comes
+-If it is a station with trains going in only one direction
+  a) If there are multiple trains that come to the platform (which you can find on the signs above the platform)
+    -Wait until your train comes and then get on it
+  b) If your train is the only train coming on that side, get on the first train that comes
+
+
+  

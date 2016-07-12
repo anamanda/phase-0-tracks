@@ -1,0 +1,18 @@
+Elevator Algorithm
+
+-Pick a random number on the elevator panel
+  -If it is higher than your number, you need to count down
+    -Move left until you either
+      a) get to your number
+        -If you get to your number, press it
+      b) hit the beginning of the row
+        -If you reach the farthest left of your row, go to the row below that
+        -Start counting from the right of that row (go to parent step and repeat until you get option a))
+
+  -If the random number is lower than your number, you need to count up
+    -Move right until you either
+      a) get to your number
+        -If you get to your number, press it
+      b) hit the end of the row
+        -If you reach the farthest right of your row, go to the row above that
+        -Start counting from the left of that row (go to parent step and repeat until you get option a))

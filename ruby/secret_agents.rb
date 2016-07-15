@@ -1,8 +1,10 @@
+# ENCRYPTION
+
 # create counter variable to loop through encryption
 
-# start-variable that has beginning input
+# set start-variable that has beginning input
 
-# create loop that goes through each position and move it one position forward and save it
+# create loop that goes through each position and moves one position forward
 
   # if start-variable[counter] is " "
     # start-variable[counter] = start-variable[counter]
@@ -12,20 +14,73 @@
   
   # loop again, go to next position, repeat until length of start-variable is being reached
 
+def encrypt
+  counter = 0
+  secret_password = "unicorn gallop"
 
-counter = 0
-secret_password = "unicorn gallop"
+  while counter < secret_password.length
+    if secret_password[counter] == " "
+      secret_password[counter] = secret_password[counter]
+    else
+      secret_password[counter] = secret_password[counter].next
+    end
 
-while counter < secret_password.length
-  if secret_password[counter] == " "
-    secret_password[counter] = secret_password[counter]
-  else
-    secret_password[counter] = secret_password[counter].next
+    counter += 1
   end
 
-  counter += 1
+  secret_password
 end
 
-puts secret_password
+puts encrypt
+
+
+
+# DECRYPTION
+
+# create counter variable to loop through decryption
+
+# set alphabet variable equal to the alphabet as a string
+
+# set start-variable that has beginning input
+
+# create loop that goes through each position and moves one position forward
+
+  # if start-variable[counter] is " "
+    # start-variable[counter] = start-variable[counter]
+
+  # else
+    # go to the next character and figure out its position in the alphabet and subtract one, and find letter at that position and save that
+
+  # loop again, go to next position, repeat until length of start-variable is being reached
+
+def decrypt
+  counter = 0
+  secret_password = "vojdpso hbmmpq"
+  alphabet = "abcdefghijklmnopqrstuvwxyz"
+
+  while counter < secret_password.length
+    if secret_password[counter] == " "
+      secret_password[counter] = secret_password[counter]
+    else
+      secret_password[counter] = alphabet[alphabet.index(secret_password[counter]) - 1]
+    end
+
+    counter += 1
+  end
+
+  secret_password
+end
+
+puts decrypt
+
+
+
+
+
+
+
+
+
+
 
 

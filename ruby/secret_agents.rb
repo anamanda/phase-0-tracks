@@ -34,7 +34,8 @@ def encrypt(secret_password)
     counter += 1
   end
 
-  p secret_password
+  return secret_password
+
 end
 
 
@@ -73,16 +74,20 @@ def decrypt(secret_password)
     counter += 1
   end
 
-  p secret_password
+  return secret_password
 end
 
 
 
 
-encrypt("abc") # should return "bcd"
-encrypt("zed") # should return "afe"
-decrypt("bcd") # should return "abc"
-decrypt("afe") # should return "zed"
+p encrypt("abc") # should return "bcd"
+p encrypt("zed") # should return "afe"
+p decrypt("bcd") # should return "abc"
+p decrypt("afe") # should return "zed"
+p decrypt(encrypt("swordfish"))
+
+# The nested decrypt/encrypt method works because it at first takes the value "swordfish" and then encrypts it
+# and after that, it decrypts that result, which brings it back to "swordfish".
 
 
 

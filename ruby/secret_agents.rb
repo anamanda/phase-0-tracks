@@ -79,15 +79,55 @@ end
 
 
 
-
+=begin
 p encrypt("abc") # should return "bcd"
 p encrypt("zed") # should return "afe"
 p decrypt("bcd") # should return "abc"
 p decrypt("afe") # should return "zed"
 p decrypt(encrypt("swordfish"))
+=end
 
 # The nested decrypt/encrypt method works because it at first takes the value "swordfish" and then encrypts it
 # and after that, it decrypts that result, which brings it back to "swordfish".
+
+
+
+# INTERFACE
+
+# Prompt user to see whether they'd like to decrypt or encrypt, save the input in a variable
+
+# Ask them for password
+
+# If they want to decrypt, run decrypt method
+
+# If they want to encrypt, run encrypt method
+
+# Print results to screen and exit
+
+puts "Would you like to decrypt or encrypt the password? (encrypt/decrypt)"
+encrypt_or_decrypt = gets.chomp
+
+until encrypt_or_decrypt == "encrypt" || encrypt_or_decrypt == "decrypt"
+  puts "Please enter 'encrypt' or 'decrypt'"
+  encrypt_or_decrypt = gets.chomp
+end
+
+if encrypt_or_decrypt == "encrypt"
+  puts "What would you like the password to be?"
+  password = gets.chomp
+  p encrypt(password)
+
+elsif encrypt_or_decrypt == "decrypt"
+  puts "What would you like the password to be?"
+  password = gets.chomp
+  p decrypt(password)
+end
+    
+
+
+
+
+
 
 
 

@@ -13,3 +13,19 @@
   # loop again, go to next position, repeat until length of start-variable is being reached
 
 
+counter = 0
+secret_password = "unicorn gallop"
+
+while counter < secret_password.length
+  if secret_password[counter] == " "
+    secret_password[counter] = secret_password[counter]
+  else
+    secret_password[counter] = secret_password[counter].next
+  end
+
+  counter += 1
+end
+
+puts secret_password
+
+

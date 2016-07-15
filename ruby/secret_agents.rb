@@ -9,18 +9,24 @@
   # if start-variable[counter] is " "
     # start-variable[counter] = start-variable[counter]
 
+  #elsif start-variable[counter] is "z"
+    #start-variable[counter] = "a"
+
   # else
     # go to the next character and save that
   
   # loop again, go to next position, repeat until length of start-variable is being reached
 
-def encrypt
+# print result
+
+def encrypt(secret_password)
   counter = 0
-  secret_password = "unicorn gallop"
 
   while counter < secret_password.length
     if secret_password[counter] == " "
       secret_password[counter] = secret_password[counter]
+    elsif secret_password[counter] == "z"
+      secret_password[counter] = "a"
     else
       secret_password[counter] = secret_password[counter].next
     end
@@ -28,10 +34,8 @@ def encrypt
     counter += 1
   end
 
-  secret_password
+  p secret_password
 end
-
-puts encrypt
 
 
 
@@ -53,9 +57,10 @@ puts encrypt
 
   # loop again, go to next position, repeat until length of start-variable is being reached
 
-def decrypt
+# print result
+
+def decrypt(secret_password)
   counter = 0
-  secret_password = "vojdpso hbmmpq"
   alphabet = "abcdefghijklmnopqrstuvwxyz"
 
   while counter < secret_password.length
@@ -68,19 +73,16 @@ def decrypt
     counter += 1
   end
 
-  secret_password
+  p secret_password
 end
 
-puts decrypt
 
 
 
-
-
-
-
-
-
+encrypt("abc") # should return "bcd"
+encrypt("zed") # should return "afe"
+decrypt("bcd") # should return "abc"
+decrypt("afe") # should return "zed"
 
 
 

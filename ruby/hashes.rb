@@ -31,6 +31,13 @@ until suite_pref == "regular" || suite_pref == "deluxe"
   suite_pref = gets.chomp
 end
 
+# set deluxe equal to true or false based on user input
+if suite_pref == "deluxe"
+  deluxe = true
+else
+  deluxe = false
+end
+
 # put user input into hash
 decor_form = {
   name: client_name,
@@ -38,7 +45,7 @@ decor_form = {
   children: number_children.to_i,
   theme: decor_theme,
   color: favorite_color,
-  suite: suite_pref
+  suite: deluxe
 }
 
 # print hash
@@ -85,12 +92,20 @@ elsif update == "color"
 elsif update == "suite"
   puts "What is your new suite preference? (regular/deluxe)"
   new_suite = gets.chomp
-    until new_suite == "regular" || new_suite == "deluxe" # set up loop to get correct input
-      puts "Incorrect input."
-      puts "Do you prefer the regular suite or the deluxe suite? (please enter regular/deluxe)"
-      new_suite = gets.chomp
-    end
-  decor_form[:suite] = new_suite
+  until new_suite == "regular" || new_suite == "deluxe" # set up loop to get correct input
+    puts "Incorrect input."
+    puts "Do you prefer the regular suite or the deluxe suite? (please enter regular/deluxe)"
+    new_suite = gets.chomp
+  end
+
+  # set new_deluxe equal to true or false based on user's new preference
+  if new_suite == "deluxe"
+    deluxe_new = true
+  else
+    deluxe_new = false
+  end
+
+  decor_form[:suite] = deluxe_new
 end
 
 # print out the latest version of the hash

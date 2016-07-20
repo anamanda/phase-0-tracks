@@ -24,21 +24,24 @@ favorite_color = gets.chomp
 puts "Do you prefer the regular suite or the deluxe suite? (please enter regular/deluxe)"
 suite_pref = gets.chomp
 
+# keep prompting user until they enter either "regular" or "deluxe"
 until suite_pref == "regular" || suite_pref == "deluxe"
   puts "Incorrect input."
   puts "Do you prefer the regular suite or the deluxe suite? (please enter regular/deluxe)"
   suite_pref = gets.chomp
 end
 
+# put user input into hash
 decor_form = {
   name: client_name,
-  age: client_age,
-  children: number_children,
+  age: client_age.to_i,
+  children: number_children.to_i,
   theme: decor_theme,
   color: favorite_color,
   suite: suite_pref
 }
 
+# print hash
 p decor_form
 
 

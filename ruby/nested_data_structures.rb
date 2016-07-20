@@ -16,5 +16,8 @@ band {
 
   singer: ['microphone', 'microphone stand', 'vocal FX pedal']
 
-  bassist: ['bass guitar']
+  bassist: [
+            neck: ['brown', 'black']
+            body: ['blue', 'red']
+          ]
 }

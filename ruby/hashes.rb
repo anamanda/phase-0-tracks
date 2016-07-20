@@ -30,3 +30,18 @@ until suite_pref == "regular" || suite_pref == "deluxe"
   suite_pref = gets.chomp
 end
 
+decor_form = {
+  name: client_name,
+  age: client_age,
+  children: number_children,
+  theme: decor_theme,
+  color: favorite_color,
+  suite: suite_pref
+}
+
+p decor_form
+
+
+
+
+

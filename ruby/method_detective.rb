@@ -33,10 +33,10 @@ puts "The mystery of the missing first letter".gsub(/^./, "")
 puts "The mystery of the missing first letter".delete("T")
 # => "he mystery of the missing first letter"
 
-# "Elementary,    my   dear        Watson!".<???>
+puts "Elementary,    my   dear        Watson!".squeeze
 # => "Elementary, my dear Watson!"
 
-# "z".<???>
+puts "z".bytes
 # => 122 
 # (What is the significance of the number 122 in relation to the character z?)
 

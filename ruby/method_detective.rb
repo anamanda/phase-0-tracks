@@ -21,10 +21,12 @@ puts "the usual".ljust(18, " suspects")
 puts "the usual".concat(" suspects")
 #=> "the usual suspects"
 
-# " suspects".<???>
+puts " suspects".rjust(18, "the usual")
+puts " suspects".prepend("the usual")
 # => "the usual suspects"
 
-# "The case of the disappearing last letter".<???>
+puts "The case of the disappearing last letter".chop
+puts "The case of the disappearing last letter".slice(0..38)
 # => "The case of the disappearing last lette"
 
 # "The mystery of the missing first letter".<???>

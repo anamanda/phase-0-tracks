@@ -29,7 +29,8 @@ puts "The case of the disappearing last letter".chop
 puts "The case of the disappearing last letter".slice(0..38)
 # => "The case of the disappearing last lette"
 
-# "The mystery of the missing first letter".<???>
+puts "The mystery of the missing first letter".gsub(/^./, "")
+puts "The mystery of the missing first letter".delete("T")
 # => "he mystery of the missing first letter"
 
 # "Elementary,    my   dear        Watson!".<???>

@@ -45,6 +45,59 @@ decor_form = {
 p decor_form
 
 
+# ask client if they want to update a key
+puts "Do you want to update a key? Enter key you'd like to update, or enter 'none'."
+update = gets.chomp
+
+# make sure client input corresponds to key name or is 'none'... handling user errors just for fun
+until update == "none" || update == "name" || update == "age" || update == "children" || update == "theme" || update == "color" || update == "suite"
+  puts "I didn't understand you. Please enter key name or type 'none'."
+  update = gets.chomp
+end
+
+# if the user does not want to change any input, do nothing
+# else if the user wants to change any of the key values,
+# prompt them to type in the category they want to change.
+# once they do this, ask them what they want to set the new value to,
+# then substitute the value in the hash
+if update == "none"
+  nil
+elsif update == "name"
+  puts "What do you want your new name to be?"
+  new_name = gets.chomp
+  decor_form[:name] = new_name
+elsif update == "age"
+  puts "What do you want your new age to be?"
+  new_age = gets.chomp
+  decor_form[:age] = new_age.to_i
+elsif update == "children"
+  puts "What do you want your new number of children to be?"
+  new_children = gets.chomp
+  decor_form[:children] = new_children.to_i
+elsif update == "theme"
+  puts "What do you want your new theme to be?"
+  new_theme = gets.chomp
+  decor_form[:theme] = new_theme
+elsif update == "color"
+  puts "What do you want your new favorite color to be?"
+  new_color = gets.chomp
+  decor_form[:color] = new_color
+elsif update == "suite"
+  puts "What is your new suite preference? (regular/deluxe)"
+  new_suite = gets.chomp
+    until new_suite == "regular" || new_suite == "deluxe" # set up loop to get correct input
+      puts "Incorrect input."
+      puts "Do you prefer the regular suite or the deluxe suite? (please enter regular/deluxe)"
+      new_suite = gets.chomp
+    end
+  decor_form[:suite] = new_suite
+end
+
+# print out the latest version of the form
+# it will be updated with new value if user enters one
+puts "Latest version of your form:"
+p decor_form
+
 
 
 

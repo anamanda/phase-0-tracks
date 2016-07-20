@@ -93,7 +93,7 @@ elsif update == "suite"
   decor_form[:suite] = new_suite
 end
 
-# print out the latest version of the form
+# print out the latest version of the hash
 # it will be updated with new value if user enters one
 puts "Latest version of your form:"
 p decor_form

@@ -20,40 +20,98 @@
     # bassist2holds (fivesb is five-string bassist) (what instruments components are held) key with array value of instrument components
     # bassist2atfeet (what instrument components are at feet) key with array value of instrument components
 
-
+# band hash
 band = {
 
-  drummer: ['drumsticks', 'kick drums', 'snare drum', 'cymbals'],
+  # drummer key/value pair. value is an array
+  drummer: [
+    'drumsticks',
+    'kick drums',
+    'snare drum',
+    'cymbals'
+    ],
 
+  # guitarists key/value pair. value is an array
   guitarists: [
 
+    # guitarist1 is a hash inside value array of guitarists key inside band hash (hash inside array inside hash)
     guitarist1 = {
-      guitarist1holds: ['acoustic guitar', 'pick'],
-      guitarist1atfeet: ['guitar FX pedal', 'amp']
-    },
 
+      # guitarist1holds key/value pair. value is an array
+      guitarist1holds: [
+        'acoustic guitar',
+        'pick'
+        ],
+
+      # guitarist1atfeet key/value pair. value is an array
+      guitarist1atfeet: [
+        'guitar FX pedal',
+        'amp'
+        ]
+      },
+
+    # guitarist2 is a hash inside value array of guitarists key inside band hash (hash inside array inside hash)
     guitarist2 = {
-      guitarist2holds: ['electric guitar', 'pick'],
-      guitarist2atfeet: ['guitar FX pedal', 'amp']
-    }
 
-  ],
+      # guitarist2holds key/value pair. value is an array
+      guitarist2holds: [
+        'electric guitar',
+        'pick'
+        ],
 
-  singer: ['microphone 1', 'microphone stand', 'vocal FX pedal'],
+      # guitarist2atfeet key/value pair. value is an array
+      guitarist2atfeet: [
+        'guitar FX pedal',
+        'amp'
+        ]
+      }
+    ],
 
+  # singer key/value pair. value is an array
+  singer: [
+    'microphone 1',
+    'microphone stand',
+    'vocal FX pedal'
+    ],
+
+  # bassist key value pair. value is an array
   bassists: [
 
+    # bassist1 is a hash inside value array of bassists inside band hash (hash inside array inside hash)
     bassist1 = {
-      bassist1holds: ['4-string bass guitar', 'pick 1', 'pick 2'],
-      bassist1atfeet: ['bass FX pedal', 'bass amp']
-    },
 
+      # bassist1holds key/value pair. value is an array
+      bassist1holds: [
+        '4-string bass guitar',
+        'pick 1',
+        'pick 2'
+        ],
+
+      # bassist1atfeet key/value pair. value is an array
+      bassist1atfeet: [
+        'bass FX pedal',
+        'bass amp'
+        ]
+      },
+
+    # bassist2 is a hash inside value array of bassists inside a hash (hash inside array inside hash)
     bassist2 = {
-      bassist2holds: ['5-string bass guitar', 'pick', 'microphone 2'],
-      bassist2atfeet: ['bass FX pedal', 'bass amp']
-    }
 
-  ]
+      # bassist2holds key/value pair. value is an array
+      bassist2holds: [
+        '5-string bass guitar',
+        'pick',
+        'microphone 2'
+        ],
+
+      # bassist2atfeet key/value pair. value is an array
+      bassist2atfeet: [
+        'bass FX pedal',
+        'bass amp'
+        ]
+      }
+
+    ]
 }
 
 # should print "kick drums"

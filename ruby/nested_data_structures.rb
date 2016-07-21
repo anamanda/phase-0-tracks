@@ -56,7 +56,7 @@ band = {
   ]
 }
 
-# should print 'kick drums'
+# should print "kick drums"
 p band[:drummer][1]
 
 # should add 'wires' to the guitarist2atfeet: value array
@@ -64,4 +64,9 @@ p band[:guitarists][1][:guitarist2atfeet].push('wires')
 
 # should print the reverse the value array of bassist1holds: 
 p band[:bassists][0][:bassist1holds].reverse
+
+# should print each value of the array of the guitarist2 hash (with added "wires")
+band[:guitarists][1].each do |key, value|
+  puts value
+end
 

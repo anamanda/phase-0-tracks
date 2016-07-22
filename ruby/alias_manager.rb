@@ -1,3 +1,5 @@
+# Release 0 - Attempt a Tricky Algorithm
+
 # ask for user's name
 puts "What is your first and last name?"
 
@@ -22,12 +24,6 @@ def alias_method(array)
 end
 
 p alias_method(name_array)
-
-
-
-
-
-
 
 
 # create loop that goes through each item in name_array
@@ -101,6 +97,35 @@ p alias_method(name_array)
 #   end
 #   new_consenants
 # end
+
+
+
+
+# Release 1 - Provide a User Interface
+
+
+
+puts "Enter a name, and you'll get a fake name back: (type 'quit' when you are finished)"
+real_name = gets.chomp
+
+until real_name == "quit"
+
+  def fake_name_tool(real_name_change)
+    i = 0
+    fake_name = ""
+
+    while i < real_name_change.length
+      fake_name << real_name_change[i].next
+      i += 1
+    end
+    fake_name
+  end
+  p fake_name_tool(real_name)
+
+  puts "Enter a name, and you'll get a fake name back: (type 'quit' when you are finished)"
+  real_name = gets.chomp
+
+end
 
 
 

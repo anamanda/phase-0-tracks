@@ -15,6 +15,9 @@ reversed_split_name = split_name.reverse
 # turn the array back into a string
 reversed_name = reversed_split_name.join(" ")
 
+# capitalize the name
+reversed_name.capitalize!
+
 # turn that string into an array, with each letter an individual item
 name_array = reversed_name.split("")
 
@@ -101,33 +104,59 @@ p alias_method(name_array)
 
 
 
-# Release 1 - Provide a User Interface
+# Release 1 - Provide a User Interface / Release 2 - Store the Aliases
 
 
-
+# get real name, capitalize it
 puts "Enter a name, and you'll get a fake name back: (type 'quit' when you are finished)"
 real_name = gets.chomp
+real_name.capitalize!
 
+# create array that be used to store the real and fake names
+name_storage = []
+
+# create loop to keep prompting user until they type 'quit'
 until real_name == "quit"
 
+  # define method that takes a real name and converts it into a fake name
   def fake_name_tool(real_name_change)
+
+    # create counter (i) and create an empty string where the fake name will go
     i = 0
     fake_name = ""
 
+    # create while loop that changes each letter in the real name to the next letter, return fake_name
     while i < real_name_change.length
       fake_name << real_name_change[i].next
       i += 1
     end
     fake_name
+
   end
+
+  # print the fake name after each entry
   p fake_name_tool(real_name)
 
+  # add the sentence 'real name' is also known as 'fake name' to the array that stores real/fake names
+  name_storage.push("#{real_name} is also known as #{fake_name_tool(real_name)}.")
+
+  # prompt user again until they type 'quit'
   puts "Enter a name, and you'll get a fake name back: (type 'quit' when you are finished)"
   real_name = gets.chomp
 
+  # capitalize the name unless they type in 'quit'
+  if real_name == "quit"
+    real_name = "quit"
+  else
+    real_name.capitalize!
+  end
+
 end
 
-
+# use a block to iterate through each sentence in the array, print each one
+name_storage.map do |name|
+  puts name
+end
 
 
 

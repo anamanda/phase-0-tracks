@@ -15,27 +15,54 @@ end
 
 
 # prompt user to enter a calculation
-puts "Please enter a calculation you would like to perform (integer + operation + integer):"
+puts "Please enter a calculation you would like to perform, and type 'done' when finished (integer + operation + integer):"
 user_input = gets.chomp
 
-# scan the user input for the first integer
-user_integer1 = user_input.scan(/\d+/).first.to_i
+# creat empty array where the calculation history will be stored
+# create variable that starts at 0 and will be added 1 to each time the calculation is performed
+calculation_storage = []
+number_of_times = 0
 
-# remove user_integer1 from user_input
-user_input.delete!(user_integer1.to_s)
+# create loop to keep prompting user until they type done
+until user_input == "done"
 
-# scan the user input for the second integer
-user_integer2 = user_input.scan(/\d+/).last.to_i
+  # scan the user input for the first integer
+  user_integer1 = user_input.scan(/\d+/).first.to_i
 
-# remove user_integer2 from user_input
-user_input.delete!(user_integer2.to_s)
+  # remove user_integer1 from user_input
+  user_input.delete!(user_integer1.to_s)
 
-# remove whitespace around remaining string, which is ' operator '
-user_input.delete!(' ')
+  # scan the user input for the second integer
+  user_integer2 = user_input.scan(/\d+/).last.to_i
 
-# set user_operation to remaining string
-user_operation = user_input
+  # remove user_integer2 from user_input
+  user_input.delete!(user_integer2.to_s)
 
-# print result of calculate method with user input
-p calculate(user_integer1, user_operation, user_integer2)
+  # remove whitespace around remaining string, which is ' operator '
+  user_input.delete!(' ')
 
+  # set user_operation to remaining string
+  user_operation = user_input
+
+  # store result of calculate method on user input in 'result' variable
+  result = calculate(user_integer1, user_operation, user_integer2)
+
+  # print result of calculate method with user input
+  p result
+
+  # add the sentence "integer1 + operation + integer2 = result" to calculation_storage array, to be called later
+  calculation_storage.push("#{user_integer1} #{user_operation} #{user_integer2} = #{result}")
+
+  # add 1 to the number of times the loop has been completed
+  number_of_times += 1
+
+  # prompt user to enter calculation again
+  puts "Please enter a calculation you would like to perform, and type 'done' when finished (integer + operation + integer):"
+  user_input = gets.chomp
+
+end
+
+puts "#{number_of_times} calculations performed:"
+calculation_storage.map do |calculation|
+  puts calculation
+end

@@ -59,7 +59,7 @@ end
     # add 1 to the number of times the loop has been completed
     number_of_times += 1
 
-    # if there is an error, use rescue keyword & print sentence encouraging them to try again
+    # if there is an error (ie. user enters incorrect input, print error message and encourage to prompt again)
     rescue
       puts "Error: Could not complete operation. Please try again."
     end

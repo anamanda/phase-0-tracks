@@ -13,3 +13,12 @@
 # Cuddle
 # Run
 
+# create Puppy class
+class Puppy
+
+  # create instances of Puppy class
+  duchess = Puppy.new
+  fido = Puppy.new
+  spot = Puppy.new
+  
+end

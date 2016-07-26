@@ -8,4 +8,8 @@
 # Barks: yes
 # Size: varies
 
+# BEHAVIOR --------------------
+# Hug
+# Cuddle
+# Run
 

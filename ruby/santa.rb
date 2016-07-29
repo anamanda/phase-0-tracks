@@ -3,6 +3,11 @@
 # create Santa class
 class Santa
 
+  # declare attr_reader and attr_accessor to make the code accessible outside of the class
+  attr_reader :age, :ethnicity
+  attr_accessor :gender
+
+
   # create initialize method, add a gender and ethnicity parameter
   def initialize(gender, ethnicity)
 
@@ -45,21 +50,23 @@ class Santa
     @reindeer_ranking.push(reindeer_name)
   end
 
+
+  # THE FOLLOWING IS REFACTORED AT THE TOP OF THE CLASS INTO ATTR_ACCESSOR
   # create setter method to reassign gender
   def gender_change=(new_gender)
     @gender = new_gender
   end
 
+  # THE FOLLOWING IS REFACTORED AT THE TOP OF THE CLASS INTO ATTR_READER
+  # # create getter method for age
+  # def age
+  #   @age
+  # end
 
-  # create getter method for age
-  def age
-    @age
-  end
-
-  # create getter method for ethnicity
-  def ethnicity
-    @ethnicity
-  end
+  # # create getter method for ethnicity
+  # def ethnicity
+  #   @ethnicity
+  # end
 
 end
 
@@ -87,7 +94,7 @@ end
 # # p santas
 
 
-# # Driver Code to test getter & setter methods
+# # Driver Code to test getter & setter methods and attr_reader & attr_accessor shortcuts
 
 # new_santa = Santa.new("female", "unicorn")
 # puts "Santa is #{new_santa.age}."

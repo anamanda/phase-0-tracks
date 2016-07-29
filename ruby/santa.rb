@@ -70,17 +70,23 @@ class Santa
 
 end
 
-# # Driver Code to test instance methods
 
+
+
+# # Driver Code to test instance methods
 # # create a new Santa instance
+# # call speak method on it and cookies and milk method on it
+
 # first_santa = Santa.new
 
-# # call speak method on it and cookies and milk method on it
 # first_santa.speak
 # first_santa.eat_milk_and_cookies("snickerdoodle")
 
 
+
+
 # # Driver Code to store & print all the Santas
+# # store attributes in arrays, create loop to iterate through arrays, then print
 
 # santas = []
 
@@ -94,7 +100,10 @@ end
 # # p santas
 
 
+
+
 # # Driver Code to test getter & setter methods and attr_reader & attr_accessor shortcuts
+# # edit age, gender, reindeer ranking, print along the way
 
 # new_santa = Santa.new("female", "unicorn")
 # puts "Santa is #{new_santa.age}."
@@ -106,6 +115,20 @@ end
 # new_santa.get_mad_at = "Vixen"
 # p new_santa
 
+
+
+
+# Driver Code to only print all the Santas
+# store attributes in array, create loop that picks randomly & picks age randomly & prints each new Santa
+
+santa_genders = ["female", "male", "agender", "bigender", "N/A"]
+santa_ethnicity = ["black", "Latino", "white", "Japanese", "unicorn"]
+
+20.times do 
+  a_new_santa = Santa.new(santa_genders.sample, santa_ethnicity.sample)
+  a_new_santa.celebrate_birthday = rand(140)
+  p a_new_santa
+end
 
 
 

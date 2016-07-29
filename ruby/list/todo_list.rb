@@ -18,4 +18,9 @@ class TodoList
     @get_items.delete(item)
   end
 
+  # create get item method to return an item at a specific index
+  def get_item(index)
+    @get_items[index]
+  end
+
 end

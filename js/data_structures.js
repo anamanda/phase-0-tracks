@@ -15,3 +15,30 @@ for (var i = 0; i < colors.length; i++) {
 };
 
 console.log(horses);
+
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
+
+function Car(model, color, isNew) {
+  console.log("This is our new car!", this);
+
+  this.model = model;
+  this.color = color;
+  this.isNew = isNew;
+
+  this.drive = function() { console.log("Vroom vroom!"); };
+
+  console.log("CAR INITIALIZATION COMPLETE");
+
+}
+
+var aCar = new Car("Civic", "green", true);
+console.log(aCar);
+console.log("We're gonna go for a ride now!");
+aCar.drive()
+
+
+
+
+

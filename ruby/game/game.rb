@@ -36,62 +36,61 @@ class WordGame
       @guessed_letters << letter
       @correct_word
     end
-
-
-
-
-
-    # # create counter that limits the amount of guesses user2 has
-    # while @guess_count < user1
-
-    #   # if user2 already guessed a letter, it doesn't count against them
-    #   if @guessed_letters.include? letter
-    #     puts "You already guessed that letter."
-
-    #   # otherwise...
-    #   else
-
-    #     # if user1 word includes the guessed letter,
-    #     # put that letter in the correct word underscored slot and
-    #     # tell them good guess
-    #     if @user1_word.include? letter
-    #       index = @user1_word.index(letter)
-    #       @correct_word[index] = letter
-    #       puts "Good guess!"
-
-    #       # if user1 word = correct word with all the correctly guessed letters,
-    #       # the user has won 
-    #       if @correct_word == @user1_word
-    #         @win = true
-    #       end
-    #       @guess_count += 1
-    #       @correct_word
-
-    #     # if user1 doesn't include the guessed letter, let user 2 know
-    #     # it counts against them
-    #     elsif !@user1_word.include? letter
-    #       puts "Incorrect guess."
-    #       @guess_count += 1
-    #     end
-
-    #     # add to the array of guessed letters
-    #     @guessed_letters << letter
-    #   end
-    # end
-
-    # # if win equals true, let them know they've won
-    # if @win == true
-    #   puts "You've won!"
-    # else
-    #   puts "You lost. Maybe next time."
-    # end
-
-
   end
 
+  # TRYING TO CORRECT THIS CODE BUT RAN OUT OF TIME. EVERYTHING ABOVE IS
+  # FIXED CODE, EVERYTHING BELOW DOESN'T SEEM TO WORK PROPERLY.
+  # I THINK THE ELEMENTS ARE THERE BUT AREN'T PROPERLY EXECUTED.
+  #################################################################################
+    # create counter that limits the amount of guesses user2 has
+    while @guess_count < user1
+
+      # if user2 already guessed a letter, it doesn't count against them
+      if @guessed_letters.include? letter
+        puts "You already guessed that letter."
+
+      # otherwise...
+      else
+
+        # if user1 word includes the guessed letter,
+        # put that letter in the correct word underscored slot and
+        # tell them good guess
+        if @user1_word.include? letter
+          index = @user1_word.index(letter)
+          @correct_word[index] = letter
+          puts "Good guess!"
+
+          # if user1 word = correct word with all the correctly guessed letters,
+          # the user has won 
+          if @correct_word == @user1_word
+            @win = true
+          end
+          @guess_count += 1
+          @correct_word
+
+        # if user1 doesn't include the guessed letter, let user 2 know
+        # it counts against them
+        elsif !@user1_word.include? letter
+          puts "Incorrect guess."
+          @guess_count += 1
+        end
+
+        # add to the array of guessed letters
+        @guessed_letters << letter
+      end
+    end
+
+    # if win equals true, let them know they've won
+    if @win == true
+      puts "You've won!"
+    else
+      puts "You lost. Maybe next time."
+    end
 
 end
 
+
+# Driver Code
 game = WordGame.new("amanda")
 game.underscore
 p game.user2_letter("d")

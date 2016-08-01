@@ -20,14 +20,16 @@ function reverseString(str) {
   }
 
   // return reversed string
-  return reversedString
+  return reversedString;
 }
 
 // Driver Code
 // console.log(reverseString("hello"))
 
 // store result of reversedString("hello") in variable called reverseHello
-var reverseHello = reverseString("hello")
+var reverseHello = reverseString("hello");
 
-// print this to the console
-console.log(reverseHello)
+// print reverseHello to console if 6 * 9 == 54
+if (6 * 9 == 54) {
+  console.log(reverseHello);
+}

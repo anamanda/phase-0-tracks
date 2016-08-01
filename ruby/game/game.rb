@@ -14,6 +14,7 @@ class WordGame
     @user1_word = user1_word
     @guess_count = 0
     @allowed_guesses = user1_word.length * 2
+    @guessed_letters = ""
     @correct_word = ""
     @win = false
   end
@@ -27,23 +28,28 @@ class WordGame
   end
 
   def user2_letter(letter)
-    while guess_count < allowed_guesses
+    if @guessed_letters.include? letter
+      puts "You already guessed that letter."
+    else
+      while guess_count < allowed_guesses
 
-      if @user1_word.include? letter
-        index = @user1_word.index(letter)
-        @correct_word[index] = letter
-        puts "Good guess!"
-        if @correct_word == @user1_word
-          @win = true
+        if @user1_word.include? letter
+          index = @user1_word.index(letter)
+          @correct_word[index] = letter
+          puts "Good guess!"
+          if @correct_word == @user1_word
+            @win = true
+          end
+          @correct_word
+
+        elsif !@user1_word.include? letter
+          puts "Incorrect guess."
         end
-        @correct_word
 
-      elsif !@user1_word.include? letter
-        puts "Incorrect guess."
+        @guessed_letters << letter
+
+        guess_count += 1
       end
-
-      guess_count += 1
-    end
 
 
   end

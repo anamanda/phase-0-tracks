@@ -24,4 +24,10 @@ function reverseString(str) {
 }
 
 // Driver Code
-console.log(reverseString("hello"))
+// console.log(reverseString("hello"))
+
+// store result of reversedString("hello") in variable called reverseHello
+var reverseHello = reverseString("hello")
+
+// print this to the console
+console.log(reverseHello)

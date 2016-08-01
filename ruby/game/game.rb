@@ -27,11 +27,37 @@ class WordGame
   end
 
   def user2_letter(letter)
-    
+    while guess_count < allowed_guesses
 
+      if @user1_word.include? letter
+        index = @user1_word.index(letter)
+        @correct_word[index] = letter
+        puts "Good guess!"
+        if @correct_word == @user1_word
+          @win = true
+        end
+        @correct_word
+
+      elsif !@user1_word.include? letter
+        puts "Incorrect guess."
+      end
+
+      guess_count += 1
+    end
+
+
+  end
 
 
 end
 
 game = WordGame.new("amanda")
-p game.underscore
+game.underscore
+p game.user2_letter("d")
+
+
+
+
+
+
+

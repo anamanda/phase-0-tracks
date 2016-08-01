@@ -14,16 +14,24 @@ class WordGame
     @user1_word = user1_word
     @guess_count = 0
     @allowed_guesses = user1_word.length * 2
-    @game_over = false
-    @correct_word_underscore = ""
+    @correct_word = ""
+    @win = false
   end
 
   # add method to create as many underscores as there are letters
   def underscore
     @user1_word.length.times do
-      @correct_word_underscore << "_"
+      @correct_word << "_"
     end
-    @correct_word_underscore
+    @correct_word
   end
 
+  def user2_letter(letter)
+    
+
+
+
 end
+
+game = WordGame.new("amanda")
+p game.underscore

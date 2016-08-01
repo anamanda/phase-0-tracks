@@ -31,14 +31,25 @@ function Car(model, color, isNew) {
 
   console.log("CAR INITIALIZATION COMPLETE");
 
-}
+};
 
 var aCar = new Car("Civic", "green", true);
 console.log(aCar);
 console.log("We're gonna go for a ride now!");
-aCar.drive()
+aCar.drive();
+if (aCar.isNew) {
+  console.log("This car is so shiny!!!!!!!!!!!!");
+};
 
+var anotherCar = new Car("Accord", "white", false);
+console.log(anotherCar);
+if (!anotherCar.isNew) {
+  console.log("This car isn't shiny anymore.");
+};
 
-
+var yetAnotherCar = new Car("Wrangler", "red", true);
+console.log(yetAnotherCar);
+yetAnotherCar.isNew = false;
+console.log(yetAnotherCar);
 
 

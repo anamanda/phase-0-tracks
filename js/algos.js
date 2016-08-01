@@ -25,3 +25,4 @@ function longestWord(wordArray) {
 // Driver Code to test longestWord function
 console.log(longestWord(["amanda", "is", "my", "name"]))
 console.log(longestWord(["my", "name", "is", "amanda"]))
+console.log(longestWord(["i", "love", "coding", "lots"]))

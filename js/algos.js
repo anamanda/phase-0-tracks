@@ -23,6 +23,20 @@ function longestWord(wordArray) {
 };
 
 // Driver Code to test longestWord function
-console.log(longestWord(["amanda", "is", "my", "name"]))
-console.log(longestWord(["my", "name", "is", "amanda"]))
-console.log(longestWord(["i", "love", "coding", "lots"]))
+console.log(longestWord(["amanda", "is", "my", "name"])); // should return amanda
+console.log(longestWord(["my", "name", "is", "amanda"])); // should return amanda
+console.log(longestWord(["i", "love", "coding", "lots"])); // should return coding
+
+////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////
+
+// write function that takes two objects as parameters
+// for each property in the object1,
+// and for each key in object2,
+// check property and value of both objects against each other
+// if there is a match, create a variable called match and set it equal to true
+// if match is equal to true, print match to the console
+// otherwise, print false to the console
+

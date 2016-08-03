@@ -13,19 +13,28 @@ function longestWord(wordArray) {
 
   // create a loop that goes through the array
   // replace previous word with current word if current word is longer than previous word
-  for (i = 0; i < wordArray.length; i++) {
+  for (var i = 0; i < wordArray.length; i++) {
     if (wordArray[i].length > longestWord.length)
-      longestWord = wordArray[i]
+      longestWord = wordArray[i];
   };
 
+  var newWord = longestWord
+
+  for (var i = 0; i < wordArray.length; i++) {
+    if ((wordArray[i].length == longestWord.length) && (wordArray[i] != longestWord))
+      newWord += " / " + wordArray[i];
+  };
+
+
   // return longestWord
-  return longestWord;
+  return newWord;
 };
 
 // Driver Code to test longestWord function
 console.log(longestWord(["amanda", "is", "my", "name"])); // should print amanda
 console.log(longestWord(["my", "name", "is", "amanda"])); // should print amanda
 console.log(longestWord(["i", "love", "coding", "lots"])); // should print coding
+console.log(longestWord(["four", "word", "no", "nine", "abcd"])); // should return four / word / nine / abcd
 
 ////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
@@ -141,11 +150,16 @@ function randomTestGenerator(int) {
 };
 
 // Driver Code
-console.log(randomTestGenerator(6)) // should print array of 6 random strings
-console.log(randomTestGenerator(4)) // should print array of 4 random strings
-console.log(randomTestGenerator(10)) // should print array of 10 random strings
+console.log(randomTestGenerator(6)); // should print array of 6 random strings
+console.log(randomTestGenerator(4)); // should print array of 4 random strings
+console.log(randomTestGenerator(10)); // should print array of 10 random strings
 
-
+// Driver Code to test randomTestGenerator with longestWord(wordArray)
+for (var i = 0; i < 10; i++) {
+  var generatedArray = randomTestGenerator(5);
+  console.log(generatedArray);
+  console.log(longestWord(generatedArray));
+}
 
 
 

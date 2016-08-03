@@ -23,9 +23,9 @@ function longestWord(wordArray) {
 };
 
 // Driver Code to test longestWord function
-console.log(longestWord(["amanda", "is", "my", "name"])); // should return amanda
-console.log(longestWord(["my", "name", "is", "amanda"])); // should return amanda
-console.log(longestWord(["i", "love", "coding", "lots"])); // should return coding
+console.log(longestWord(["amanda", "is", "my", "name"])); // should print amanda
+console.log(longestWord(["my", "name", "is", "amanda"])); // should print amanda
+console.log(longestWord(["i", "love", "coding", "lots"])); // should print coding
 
 ////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
@@ -71,10 +71,25 @@ function objectMatch(obj1, obj2) {
 };
 
 // Driver Code
-objectMatch(object1, object2) // should return false
-objectMatch(object1, object3) // should return true
+objectMatch(object1, object2) // should print false
+objectMatch(object1, object3) // should print true
 
+////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////
 
-
-
-
+// write function that takes an integer and returns an array of that length with random strings
+// create empty array testArray that will be returned
+// create sub function that will return a random letter of the alphabet
+  // create array with each letter as an individual item
+  // create randomLetter variable that will generate a random letter based on the Math.random() built-in method
+  // return randomLetter
+// create another sub function that will return a random word (length varying)
+  // create randomWord variable that holds an empty string
+  // create a loop that loops a random number between 1 and 10 times, using Math.random() built-in method
+    // add the result of the random letter function to the randomWord string each item
+  // return randomWord
+// create loop that starts at 0 and loops int times
+  // add the result of the random word function to testArray each time
+// return testArray

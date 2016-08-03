@@ -93,3 +93,59 @@ objectMatch(object1, object3) // should print true
 // create loop that starts at 0 and loops int times
   // add the result of the random word function to testArray each time
 // return testArray
+
+function randomTestGenerator(int) {
+
+  // declare empty array
+  var testArray = [];
+
+  // create function to return random letter of alphabet
+  function chooseRandomLetter() {
+
+    // create array with each letter of alphabet as separate items
+    var alphabetArray = ["a", "b", "c", "d", "c", "d", "e", "f", "g", "h", "i",
+                      "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t",
+                      "u", "v", "w", "x", "y", "z"];
+
+    // create randomLetter variable that picks random item from alphabetArray
+    var randomLetter = alphabetArray[Math.floor((Math.random() * 27) + 1)];
+
+    // return randomLetter
+    return randomLetter;
+  };
+
+  // create function to return random word using random letters
+  function chooseRandomWords() {
+
+    // declare empty string randomWord
+    var randomWord = "";
+
+    // loop between 1 and 10 times
+    // add a random letter to the randomWord string each time
+    for (var i = 0; i < (Math.floor((Math.random() * 10) + 1)); i++) {
+      randomWord += chooseRandomLetter();
+    };
+
+    // return randomWord
+    return randomWord
+  };
+
+  // loop int amount of times
+  // add a random word to the testArray each time
+  for (var i = 0; i < int; i++) {
+    testArray.push(chooseRandomWords())
+  };
+
+  // return testArray
+  return testArray;
+};
+
+// Driver Code
+console.log(randomTestGenerator(6)) // should print array of 6 random strings
+console.log(randomTestGenerator(4)) // should print array of 4 random strings
+console.log(randomTestGenerator(10)) // should print array of 10 random strings
+
+
+
+
+

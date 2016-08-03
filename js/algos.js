@@ -1,8 +1,14 @@
 // write a function that takes has an array parameter
-// create an empty variable that will hold the longest word
+// create an empty variable longestWord that will hold the longest word
 // loop through the array with a for loop, going from 0 to the end of the array
 // if the next word is longer than the previous word, replace it with the longer word
 // go through the whole array replacing smaller word with longer word
+// deal with returning more than one word of the most length:
+  // store longestWord string in a new variable newWord
+  // create a loop that loops through the array
+  // if it comes across a word that's as long as the longest word (and isn't actually what's stored in longestWord)
+  // then add this word to the newWord variable
+// return newWord
 
 
 // declare longestWord function that takes in an array
@@ -18,8 +24,11 @@ function longestWord(wordArray) {
       longestWord = wordArray[i];
   };
 
+  // create variable to hold longestWord string
   var newWord = longestWord
 
+  // create loop that goes through the array again
+  // add any word of the same length as longestWord to the newWord string
   for (var i = 0; i < wordArray.length; i++) {
     if ((wordArray[i].length == longestWord.length) && (wordArray[i] != longestWord))
       newWord += " / " + wordArray[i];
@@ -136,7 +145,7 @@ function randomTestGenerator(int) {
     };
 
     // return randomWord
-    return randomWord
+    return randomWord;
   };
 
   // loop int amount of times
@@ -159,7 +168,7 @@ for (var i = 0; i < 10; i++) {
   var generatedArray = randomTestGenerator(5);
   console.log(generatedArray);
   console.log(longestWord(generatedArray));
-}
-
+  console.log("") // create blank line after each iteration for readability
+} // should return 10 arrays with 5 randomly generated words, and print the longest words of each array right below each one
 
 

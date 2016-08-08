@@ -1,7 +1,8 @@
 # Virus Predictor
 
 # I worked on this challenge [by myself, with: GPS Lorena Mesa].
-# We spent [#] hours on this challenge.
+# We spent [1] hours on this challenge together.
+# 1 hour independently afterwards.
 
 # EXPLANATION OF require_relative
 # pulls in the data from 'state_data.rb' from your own directory
@@ -21,8 +22,7 @@ class VirusPredictor
   # stores result of predicted deaths method (number of deaths based on population density)
   # stores result of the speed of the spread based on population density
   def virus_effects
-    predicted_deaths
-    speed_of_spread
+    death_spread
   end
 
   private
@@ -37,8 +37,6 @@ class VirusPredictor
     return (@population * 0.2).floor if @population_density >= 100
     return (@population * 0.1).floor if @population_density >= 50
     return (@population * 0.05).floor if @population_density < 50
-
-    print "#{@state} will lose #{number_of_deaths} people in this outbreak"
 
   end
 
@@ -56,8 +54,13 @@ class VirusPredictor
     return (speed += 2) if @population_density >= 50
     return (speed += 2.5) if @population_density < 50
 
-    puts " and will spread across the state in #{speed} months.\n\n"
+  end
 
+  def death_spread
+    num_predicted_deaths = predicted_deaths
+    speed_spread = speed_of_spread
+    print "#{@state} will lose #{num_predicted_deaths} people in this outbreak"
+    puts " and will spread across the state in #{speed_spread} months.\n\n"
   end
 
 end
@@ -89,4 +92,14 @@ virus_predictor_array
 
 
 #=======================================================================
-# Reflection Section
+
+# symbols are used for hashes inside hashes, strings can be used in parent hashes
+# require_relative brings in a file you've made, relative to where you are in the file structure
+# require pulls in data from a Ruby-found directory/library (AKA a gem)
+# you can use loops to iterate through a hash - you could use while, you could use .each do, etc
+# when refactoring virus_effects - didn't need the state variables as parameters, because they were accessible throughout inside the class
+# I think I mostly solidified methods within classes and how they can all coordinate with each other
+# I am also happy I got more practice with hashes!
+
+
+

@@ -1,0 +1,71 @@
+8.3 Release 2: Execute SQL Queries
+
+
+/// 1) Display the information in one table (either table is fine). ///
+sqlite> SELECT * FROM bands;
+1|Blonde Maze|1|false|@blondemaze|2
+2|Labyrinth Ear|2|false|@LabyrinthEar|2
+3|Third Eye Blind|5|false|@ThirdEyeBlind|1
+4|Calvin Harris|1|true|@CalvinHarris|4
+5|Jack Johnson|1|false|@jackjohnson|3
+6|Goo Goo Dolls|2|false|@googoodolls|1
+
+
+/// 2) Update an item that meets some condition (you can choose a condition that makes sense). ///
+sqlite> UPDATE bands SET genre_id=3 WHERE name="Goo Goo Dolls";
+
+
+/// 3) Display the information in both tables using one query. ///
+
+sqlite> SELECT * FROM bands, genres WHERE bands.genre_id = genres.id;
+1|Blonde Maze|1|false|@blondemaze|2|2|Electronic
+2|Labyrinth Ear|2|false|@LabyrinthEar|2|2|Electronic
+3|Third Eye Blind|5|false|@ThirdEyeBlind|1|1|Rock
+4|Calvin Harris|1|true|@CalvinHarris|4|4|Dance
+5|Jack Johnson|1|false|@jackjohnson|3|3|Acoustic
+6|Goo Goo Dolls|2|false|@googoodolls|3|3|Acoustic
+
+
+/// 4) Display a narrower selection of columns (fewer columns than all of them, in other words) from both tables using one query. ///
+sqlite> SELECT bands.name, genres.genre FROM bands JOIN genres ON bands.genre_id = genres.id;
+Blonde Maze|Electronic
+Labyrinth Ear|Electronic
+Third Eye Blind|Rock
+Calvin Harris|Dance
+Jack Johnson|Acoustic
+Goo Goo Dolls|Acoustic
+
+
+/// 5) Delete an item that meets some condition (you can choose a condition that makes sense). ///
+sqlite> DELETE FROM bands WHERE twitter_handle="@jackjohnson";
+
+
+/// JOINS ///
+
+***Cross Inner Join***
+Combines all records from one table with all records from another.
+
+sqlite> SELECT bands.id, name, genre_id FROM bands CROSS JOIN genres;
+1|Blonde Maze|2
+1|Blonde Maze|2
+1|Blonde Maze|2
+1|Blonde Maze|2
+2|Labyrinth Ear|2
+2|Labyrinth Ear|2
+2|Labyrinth Ear|2
+2|Labyrinth Ear|2
+3|Third Eye Blind|1
+3|Third Eye Blind|1
+3|Third Eye Blind|1
+3|Third Eye Blind|1
+4|Calvin Harris|4
+4|Calvin Harris|4
+4|Calvin Harris|4
+4|Calvin Harris|4
+6|Goo Goo Dolls|3
+6|Goo Goo Dolls|3
+6|Goo Goo Dolls|3
+6|Goo Goo Dolls|3
+
+
+***

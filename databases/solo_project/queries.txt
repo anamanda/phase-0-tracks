@@ -68,4 +68,31 @@ sqlite> SELECT bands.id, name, genre_id FROM bands CROSS JOIN genres;
 6|Goo Goo Dolls|3
 
 
-***
+***Inner Join***
+This is the most common type of join. It selects all rows from both tables and joins where they share values in common.
+This was used in question number 4.
+
+
+***Left Join***
+This joins all of the rows from the left table with all of the rows from the right table, but only displays information in the right table where there is matching information in the left table. If there is no matching information in a row, the right table will display NULL in that row.
+
+sqlite> SELECT bands.name, genres.genre FROM bands LEFT JOIN genres ON bands.genre_id=genres.id;
+Blonde Maze|Electronic
+Labyrinth Ear|Electronic
+Third Eye Blind|Rock
+Calvin Harris|Dance
+Goo Goo Dolls|Acoustic
+
+
+***Right Join***
+This has the opposite effect of the left join, joining all of the rows from the right table with all of the rows the left table, but only displays information in the left table where there is matching information in the right table. If there is no matching information in a row, the left table will display NULL in that row.
+
+This doesn't seem to be currently supported:
+
+sqlite> SELECT bands.name, genres.genre FROM bands RIGHT JOIN genres ON bands.genre_id=genres.id;
+Error: RIGHT and FULL OUTER JOINs are not currently supported
+
+
+
+
+

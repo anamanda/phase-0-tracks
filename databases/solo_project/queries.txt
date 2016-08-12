@@ -67,6 +67,30 @@ sqlite> SELECT bands.id, name, genre_id FROM bands CROSS JOIN genres;
 6|Goo Goo Dolls|3
 6|Goo Goo Dolls|3
 
+Opposite way:
+
+sqlite> SELECT genres.id, genre FROM genres CROSS JOIN bands;
+1|Rock
+1|Rock
+1|Rock
+1|Rock
+1|Rock
+2|Electronic
+2|Electronic
+2|Electronic
+2|Electronic
+2|Electronic
+3|Acoustic
+3|Acoustic
+3|Acoustic
+3|Acoustic
+3|Acoustic
+4|Dance
+4|Dance
+4|Dance
+4|Dance
+4|Dance
+
 
 ***Inner Join***
 This is the most common type of join. It selects all rows from both tables and joins where they share values in common.
@@ -92,7 +116,22 @@ This doesn't seem to be currently supported:
 sqlite> SELECT bands.name, genres.genre FROM bands RIGHT JOIN genres ON bands.genre_id=genres.id;
 Error: RIGHT and FULL OUTER JOINs are not currently supported
 
+***Natural Left Outer Join***
+This join uses matching column names to join the tables.
 
+sqlite> SELECT name FROM bands NATURAL LEFT OUTER JOIN genres;
+Blonde Maze
+Labyrinth Ear
+Third Eye Blind
+Calvin Harris
+Goo Goo Dolls
 
+Changed up the command a bit and got this:
 
+sqlite> SELECT bands.name, genres.genre FROM bands NATURAL LEFT OUTER JOIN genres;
+Blonde Maze|Rock
+Labyrinth Ear|Electronic
+Third Eye Blind|Acoustic
+Calvin Harris|Dance
+Goo Goo Dolls|
 

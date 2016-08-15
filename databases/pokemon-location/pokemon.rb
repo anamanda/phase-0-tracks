@@ -1,3 +1,5 @@
+# 8.5 - Combining SQL and Ruby
+
 # require gems
 require 'sqlite3'
 require 'faker'
@@ -110,7 +112,7 @@ end
 
 
 
-# # select all of the pokemon from the database, and list the column names as well as the information
+# # DOESN'T REALLY APPLY - select all of the pokemon from the database, and list the column names as well as the information
 # columns, *rows = pokemon_db.execute2("SELECT * FROM pokemon")
 
 # with_column_name = columns, *rows

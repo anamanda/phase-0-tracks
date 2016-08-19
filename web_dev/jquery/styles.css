@@ -24,6 +24,15 @@ div#hat img {
   height: 12%;
   display: block;
   margin-left: 40%;
-  margin-right:auto;
+  margin-right: auto;
   margin-top: -38%;
+}
+
+div#glasses img {
+  width: 20%;
+  height: 20%;
+  display: block;
+  margin-left: 39%;
+  margin-right: auto;
+  margin-top: -2.5%;
 }

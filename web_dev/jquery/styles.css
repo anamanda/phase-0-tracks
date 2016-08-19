@@ -1,0 +1,29 @@
+h1 {
+  font-family: Verdana;
+  color: #ff5050;
+  text-align: center;
+  padding-top: 20px;
+}
+
+body {
+  background-color: #ffff99;
+}
+
+div#puppy img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#puppy {
+  padding: 2px;
+}
+
+div#hat img {
+  width: 12%;
+  height: 12%;
+  display: block;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top: -700px;
+}

@@ -1,0 +1,64 @@
+h1 {
+  font-family: Verdana;
+  color: #ff5050;
+  text-align: center;
+  padding-top: 20px;
+}
+
+body {
+  background-color: #ffff99;
+}
+
+div#puppy img {
+  width: 32%;
+  height: 32%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#puppy {
+  padding: 2px;
+}
+
+div#hat img {
+  width: 12%;
+  height: 20%;
+  display: block;
+  position: absolute;
+  margin-left: 40%;
+  margin-right: auto;
+  margin-top: -37.5%;
+}
+
+div#glasses img {
+  width: 20%;
+  height: 20%;
+  display: block;
+  position: absolute;
+  margin-left: 38.5%;
+  margin-right: auto;
+  margin-top: -27.5%;
+}
+
+div#mustache img {
+  width: 9%;
+  height: 12%;
+  display: block;
+  position: absolute;
+  margin-left: 44%;
+  margin-right: auto;
+  margin-top: -20%;
+}
+
+#thanks {
+  font-family: Verdana;
+  color: #ff5050;
+  text-align: center;
+}
+
+#undecorate {
+  font-family: Verdana;
+  color: #ff5050;
+  text-align: center;
+}

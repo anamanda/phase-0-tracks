@@ -18,6 +18,14 @@ $(document).ready(function() {
     $('#hat').hide();
   });
 
+  $('#mustache').click(function(){
+    $('#mustache').hide();
+  });
+
+  $('#glasses').click(function(){
+    $('#glasses').hide();
+  });
+
 });
 
 console.log("I'm working")

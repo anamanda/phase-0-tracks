@@ -14,6 +14,9 @@ $(document).ready(function() {
     $('#undecorate').append("<p>Click on each individual item to undecorate the puppy.</p>")
   });
 
+  $('#hat').click(function(){
+    $('#hat').hide();
+  });
 
 });
 

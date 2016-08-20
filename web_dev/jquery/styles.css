@@ -23,29 +23,32 @@ div#puppy img {
 
 div#hat img {
   width: 12%;
-  height: 12%;
+  height: 20%;
   display: block;
+  position: absolute;
   margin-left: 40%;
   margin-right: auto;
-  margin-top: -38%;
+  margin-top: -37.5%;
 }
 
 div#glasses img {
   width: 20%;
   height: 20%;
   display: block;
-  margin-left: 39%;
+  position: absolute;
+  margin-left: 38.5%;
   margin-right: auto;
-  margin-top: -2.5%;
+  margin-top: -27.5%;
 }
 
 div#mustache img {
-  width: 12%;
+  width: 9%;
   height: 12%;
   display: block;
-  margin-left: 42.7%;
+  position: absolute;
+  margin-left: 44%;
   margin-right: auto;
-  margin-top: -4%;
+  margin-top: -20%;
 }
 
 #thanks {
